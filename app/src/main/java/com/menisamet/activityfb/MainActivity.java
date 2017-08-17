@@ -57,4 +57,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, InterestsActivity.class);
         startActivity(intent);
     }
+
+    public void testDbInsertUser(View view) {
+    }
 }
