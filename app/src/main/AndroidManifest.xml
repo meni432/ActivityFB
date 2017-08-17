@@ -43,7 +43,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MyLocation"
+            android:name=".MyLocationActivity"
             android:label="@string/title_activity_my_location"></activity>
     </application>
 
