@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ActivityFB</string>
+    <string name="title_activity_add_events">addEvents</string>
+    <string name="title_activity_add_event">addEvent</string>
 </resources>
