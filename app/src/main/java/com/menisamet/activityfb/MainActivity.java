@@ -58,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void testDbInsertUser(View view) {
+
+    public void testMap(View view) {
+        Intent intent = new Intent(this, MyLocation.class);
+        startActivity(intent);
+
     }
 }

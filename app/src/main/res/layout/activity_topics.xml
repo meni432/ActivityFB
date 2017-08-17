@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.menisamet.activityfb.TopicsActivity">
+
+    <TextView
+        android:id="@+id/topicText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ball Games"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="13dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonBall"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/imageButtonBall" />
+
+    <TextView
+        android:id="@+id/topicText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Card Games"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/topicText3"
+        android:layout_marginEnd="59dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topicText3"
+        android:layout_marginRight="59dp" />
+
+    <TextView
+        android:id="@+id/topicText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Board Games"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="13dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonBoard"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/imageButtonBoard" />
+
+    <TextView
+        android:id="@+id/topicText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exercise"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="75dp" />
+
+    <TextView
+        android:id="@+id/topicText6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="105dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="105dp" />
+
+    <ImageButton
+        android:id="@+id/imageButtonExercise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/topicText5"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintLeft_toLeftOf="@+id/topicText5" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBoard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonExercise"
+        app:layout_constraintRight_toRightOf="@+id/imageButtonExercise"
+        android:layout_marginTop="182dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="181dp"
+        app:layout_constraintLeft_toLeftOf="@+id/imageButtonExercise"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonBall" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/imageButtonBoard"
+        android:layout_marginTop="56dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/imageButtonBoard"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/imageButtonComputer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/topicText2"
+        app:layout_constraintRight_toRightOf="@+id/imageButtonCard"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="-103dp"
+        app:layout_constraintLeft_toLeftOf="@+id/imageButtonCard"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/imageButtonCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/topicText4"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintLeft_toLeftOf="@+id/topicText4" />
+
+    <TextView
+        android:id="@+id/topicText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Computer Games"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/topicText1"
+        app:layout_constraintRight_toRightOf="@+id/imageButtonComputer"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="@+id/topicText1"
+        app:layout_constraintLeft_toRightOf="@+id/imageButtonComputer" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBackFromTopics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/topicText6"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintLeft_toLeftOf="@+id/topicText6" />
+</android.support.constraint.ConstraintLayout>
