@@ -86,7 +86,27 @@ class Database {
     public void test() {
 
         DatabaseReference myRef = database.getReference("message");
+        allUsers = new ArrayList<>();
 
-        myRef.setValue("Hello, World!");
+        myRef.setValue("Hello, World !" + (int)(Math.random()*10));
+
+        DatabaseReference databaseReference = database.getReference().child("users");
+
+        User newUser = new User();
+        newUser.setEmail("email@gmail.com");
+        newUser.setName("test1");
+        newUser.setTopicList(new ArrayList<Topic>());
+        newUser.setUid("11111");
+        allUsers.add(newUser);
+
+        newUser = new User();
+        newUser.setEmail("email@gmail.com");
+        newUser.setName("test2");
+        newUser.setTopicList(new ArrayList<Topic>());
+        newUser.setUid("22222");
+        allUsers.add(newUser);
+
+        databaseReference.setValue(allUsers);
+
     }
 }
