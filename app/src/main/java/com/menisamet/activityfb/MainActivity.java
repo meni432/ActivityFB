@@ -50,4 +50,12 @@ public class MainActivity extends AppCompatActivity {
         UserData userData = UserData.getInstance();
         userData.test();
     }
+
+
+    public void testMap(View view) {
+        Intent intent = new Intent(this, MyLocation.class);
+        startActivity(intent);
+
+    }
 }
+

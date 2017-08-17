@@ -76,4 +76,5 @@
     <string name="email_fmt">Email: %s</string>
 
     <string name="facebook_app_id">109369616425386</string>
+    <string name="title_activity_my_location">Map</string>
 </resources>
