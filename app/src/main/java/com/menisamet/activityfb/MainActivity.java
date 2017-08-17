@@ -40,10 +40,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void loadLoginActivity(View view)
-    {
+    public void loadLoginActivity(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
 
+    }
+
+    public void testDB(View view) {
+        UserData userData = UserData.getInstance();
+        userData.test();
     }
 }
