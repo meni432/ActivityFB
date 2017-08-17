@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Database.getInstance().loadAllUsers();
+
         try {
             PackageInfo info = getPackageManager().getPackageInfo(
                     "com.menisamet.activityfb",
@@ -47,7 +49,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void testDB(View view) {
-        UserData userData = UserData.getInstance();
-        userData.test();
+        Database database = Database.getInstance();
+        database.test();
+    }
+
+    public void testIntersts(View view) {
+        Intent intent = new Intent(this, InterestsActivity.class);
+        startActivity(intent);
     }
 }
