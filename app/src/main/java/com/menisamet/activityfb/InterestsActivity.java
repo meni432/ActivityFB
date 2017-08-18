@@ -26,7 +26,7 @@ public class InterestsActivity extends AppCompatActivity {
         picker = (BubblePicker)findViewById(R.id.picker);
 
 
-        final String[] titles = getResources().getStringArray(R.array.countries);
+        final String[] titles = getResources().getStringArray(R.array.interests);
         final TypedArray colors = getResources().obtainTypedArray(R.array.colors);
         final TypedArray images = getResources().obtainTypedArray(R.array.images);
 
@@ -53,12 +53,14 @@ public class InterestsActivity extends AppCompatActivity {
         picker.setListener(new BubblePickerListener() {
             @Override
             public void onBubbleSelected(@NotNull PickerItem item) {
-
+                //TODO: add interest to user
+                //TODO: update DB
             }
 
             @Override
             public void onBubbleDeselected(@NotNull PickerItem item) {
-
+                //TODO: remove interest to user
+                //TODO: update DB
             }
         });
     }
