@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void testMap(View view) {
-        Intent intent = new Intent(this, MyLocation.class);
+        Intent intent = new Intent(this, MyLocationActivity.class);
         startActivity(intent);
 
     }
