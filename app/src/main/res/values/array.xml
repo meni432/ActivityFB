@@ -18,10 +18,10 @@
     </string-array>
 
     <integer-array name="images">
-        <item>@mipmap/Soccer</item>
-        <item>@mipmap/Basketball</item>
-        <item>@mipmap/Tennis</item>
-        <item>@mipmap/Portal2</item>
+        <item>@drawable/soccer</item>
+        <item>@drawable/basketball</item>
+        <item>@drawable/tennis</item>
+        <item>@drawable/portal</item>
         <item>@drawable/costa_rica</item>
         <item>@drawable/dominican_republic</item>
         <item>@drawable/mexico</item>
