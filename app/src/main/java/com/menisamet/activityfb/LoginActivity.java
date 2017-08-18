@@ -139,7 +139,7 @@ public class LoginActivity extends AppCompatActivity implements
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Database.getInstance().setFirebaseUser(user);
+                            Database.getInstance().setFirebaseUser(user, token);
                             String userID = token.getUserId();
                             Log.d(TAG, "user id : " + userID);
                             Log.d(TAG, "https://graph.facebook.com/" + userID + "/picture?type=large");

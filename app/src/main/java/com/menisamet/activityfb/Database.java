@@ -2,6 +2,7 @@ package com.menisamet.activityfb;
 
 import android.util.Log;
 
+import com.facebook.AccessToken;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -73,7 +74,7 @@ class Database {
         });
     }
 
-    public User setFirebaseUser(FirebaseUser firebaseUser) {
+    public User setFirebaseUser(FirebaseUser firebaseUser, AccessToken token) {
         DatabaseReference databaseReference = database.getReference().child("users");
         boolean isIn = false;
         User ourUser = null;
@@ -95,6 +96,7 @@ class Database {
             newUser.setName(firebaseUser.getDisplayName());
             newUser.setTopicList(new ArrayList<Topic>());
             newUser.setUid(firebaseUser.getUid());
+            newUser.setFacebookUid(token.getUserId());
             allUsers.add(newUser);
             ourUser = newUser;
         }
