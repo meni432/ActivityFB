@@ -13,15 +13,15 @@
         <item>Hackathon</item>
         <item>Bridge</item>
         <item>Risk</item>
-        <item>Monopole</item>
+        <item>Monopoly</item>
         <item>Scrabble</item>
     </string-array>
 
     <integer-array name="images">
-        <item>@drawable/argentina</item>
-        <item>@drawable/bolivia</item>
-        <item>@drawable/brazil</item>
-        <item>@drawable/chile</item>
+        <item>@mipmap/Soccer</item>
+        <item>@mipmap/Basketball</item>
+        <item>@mipmap/Tennis</item>
+        <item>@mipmap/Portal2</item>
         <item>@drawable/costa_rica</item>
         <item>@drawable/dominican_republic</item>
         <item>@drawable/mexico</item>
