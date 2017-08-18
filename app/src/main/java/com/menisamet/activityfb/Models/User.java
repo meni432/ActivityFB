@@ -13,6 +13,15 @@ public class User {
     private String email;
     private List<Topic> topicList;
     private List<Event> userEventList;
+    private String facebookUid;
+
+    public String getFacebookUid() {
+        return facebookUid;
+    }
+
+    public void setFacebookUid(String facebookUid) {
+        this.facebookUid = facebookUid;
+    }
 
     public String getUid() {
         return uid;
