@@ -1,5 +1,6 @@
 package com.menisamet.activityfb.Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -38,10 +39,36 @@ public class User {
     }
 
     public List<Topic> getTopicList() {
+        if (topicList == null) {
+            topicList = new ArrayList<>();
+        }
         return topicList;
+    }
+
+    public List<Event> getUserEventList() {
+        if (userEventList == null) {
+            userEventList = new ArrayList<>();
+        }
+        return userEventList;
+    }
+
+    public void setUserEventList(List<Event> userEventList) {
+        this.userEventList = userEventList;
     }
 
     public void setTopicList(List<Topic> topicList) {
         this.topicList = topicList;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid='" + uid + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", topicList=" + topicList +
+                ", userEventList=" + userEventList +
+                '}';
     }
 }

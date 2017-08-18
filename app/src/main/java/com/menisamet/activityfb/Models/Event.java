@@ -17,6 +17,15 @@ public class Event {
     private List<String> attendantsUIDList;
     private Location location;
 
+    public Event() {
+    }
+
+    public Event(long id, String subTopic, int minAttendants) {
+        this.id = id;
+        this.subTopic = subTopic;
+        this.minAttendants = minAttendants;
+    }
+
     public String getUidOwner() {
         return uidOwner;
     }
@@ -71,5 +80,18 @@ public class Event {
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", uidOwner='" + uidOwner + '\'' +
+                ", topic=" + topic +
+                ", subTopic='" + subTopic + '\'' +
+                ", minAttendants=" + minAttendants +
+                ", attendantsUIDList=" + attendantsUIDList +
+                ", location=" + location +
+                '}';
     }
 }

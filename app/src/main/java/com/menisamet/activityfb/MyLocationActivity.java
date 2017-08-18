@@ -1,7 +1,6 @@
 package com.menisamet.activityfb;
 
 
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -63,13 +62,13 @@ public class MyLocationActivity extends FragmentActivity implements OnMapReadyCa
         mMap = googleMap;
 
         /**
-        LatLng telAviv = new LatLng(32.063167, 34.7705518);
-        mMap.addMarker(new MarkerOptions().position(telAviv).title("Facebook Tel Aviv"));
+         LatLng telAviv = new LatLng(32.063167, 34.7705518);
+         mMap.addMarker(new MarkerOptions().position(telAviv).title("Facebook Tel Aviv"));
 
-        CameraPosition target = CameraPosition.builder().target(telAviv).zoom(14).build();
-        mMap.moveCamera(CameraUpdateFactory.newCameraPosition(target));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(telAviv));
-*/
+         CameraPosition target = CameraPosition.builder().target(telAviv).zoom(14).build();
+         mMap.moveCamera(CameraUpdateFactory.newCameraPosition(target));
+         mMap.moveCamera(CameraUpdateFactory.newLatLng(telAviv));
+         */
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mMap.setMyLocationEnabled(true);
         } else {
@@ -93,5 +92,10 @@ public class MyLocationActivity extends FragmentActivity implements OnMapReadyCa
                 }
                 break;
         }
+    }
+
+    public void nextToInterested(View view) {
+        Intent intent = new Intent(this, InterestsActivity.class);
+        startActivity(intent);
     }
 }
