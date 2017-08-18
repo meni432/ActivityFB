@@ -94,4 +94,5 @@
     </string-array>
     <string name="textview">TextView</string>
     <string name="next">Next</string>
+    <string name="button">Button</string>
 </resources>

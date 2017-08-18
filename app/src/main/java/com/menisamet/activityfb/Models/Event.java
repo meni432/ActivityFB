@@ -11,6 +11,16 @@ import java.util.List;
 public class Event {
     private long id;
     private String uidOwner;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    private User user;
     private Topic topic;
     private String subTopic;
     private int minAttendants;
