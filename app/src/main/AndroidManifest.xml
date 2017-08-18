@@ -43,10 +43,12 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <activity android:name=".MyLocationActivity"/>
+        <activity android:name=".JoinEventActivity"/>
         <activity
+            android:name=".MapsActivity"/>
             android:name=".MyLocationActivity"
             android:label="@string/title_activity_my_location" />
-        <activity android:name=".JoinEventActivity"></activity>
         <activity android:name=".addMenu" />
     </application>
 

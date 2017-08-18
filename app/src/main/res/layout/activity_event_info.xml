@@ -63,6 +63,16 @@
             android:text="Test Map"
             tools:layout_editor_absoluteX="148dp"
             tools:layout_editor_absoluteY="45dp" />
+
+
+        <Button
+            android:id="@+id/testActivityMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="testActivityMap"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="45dp" />
     </LinearLayout>
 
 </LinearLayout>

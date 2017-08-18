@@ -62,7 +62,11 @@ public class MainActivity extends AppCompatActivity {
     public void testMap(View view) {
         Intent intent = new Intent(this, MyLocationActivity.class);
         startActivity(intent);
+    }
 
+    public void testActivityMap(View view) {
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
     }
     public void testAddMenu(View view) {
         Intent intent = new Intent(this, addMenu.class);

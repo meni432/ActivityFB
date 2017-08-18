@@ -74,8 +74,8 @@ public class MyLocationActivity extends FragmentActivity implements OnMapReadyCa
         } else {
             requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, MY_PERMISSIONS_COURSE_LOCATION);
         }
-
     }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
