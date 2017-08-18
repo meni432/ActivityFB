@@ -37,7 +37,6 @@ class Database {
     }
 
     private Database() {
-
     }
 
     public void loadAllUsers() {
