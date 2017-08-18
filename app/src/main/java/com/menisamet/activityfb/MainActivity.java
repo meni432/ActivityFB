@@ -64,4 +64,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void loadJoinEventActivity(View view) {
+        Intent intent = new Intent(this, JoinEventActivity.class);
+        startActivity(intent);
+    }
 }
