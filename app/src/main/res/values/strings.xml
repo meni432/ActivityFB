@@ -77,6 +77,19 @@
 
     <string name="facebook_app_id">109369616425386</string>
     <string name="title_activity_my_location">Map</string>
-    <string name="title_activity_add_events">addEvents</string>
-    <string name="title_activity_add_event">addEvent</string>
+    <string-array name="Interests">
+        <item>Soccer</item>
+        <item>Basketball</item>
+        <item>Tennis</item>
+        <item>Portal 2</item>
+        <item>Texas Holdem</item>
+        <item>Ping Pong</item>
+        <item>Snooker</item>
+        <item>Hiking</item>
+        <item>Hackathon</item>
+        <item>Bridge</item>
+        <item>Risk</item>
+        <item>Monopole</item>
+        <item>Scrabble</item>
+    </string-array>
 </resources>
