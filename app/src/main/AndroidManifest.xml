@@ -48,7 +48,9 @@
             android:label="@string/title_activity_my_location" />
         <activity android:name=".JoinEventActivity" />
         <activity android:name=".EventViewActivity" />
-        <activity android:name=".addMenu"></activity>
+        <activity android:name=".addMenu" />
+        <activity android:name=".MapsActivity" />
+        <activity android:name=".HaveFunActivity"></activity>
     </application>
 
 </manifest>

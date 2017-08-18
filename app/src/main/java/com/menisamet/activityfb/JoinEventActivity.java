@@ -1,6 +1,7 @@
 package com.menisamet.activityfb;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,8 +41,12 @@ public class JoinEventActivity extends AppCompatActivity {
         joinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent myIntent = new Intent(getBaseContext(), haveFunActivity.class);
+//                Intent myIntent = new Intent(getBaseContext(), HaveFunActivity.class);
 //                myIntent.putExtra("USER_NAME",getIntent().getStringExtra("USER_EVENT"));
+                String url = "https://www.facebook.com/sami.semo.108889?fref=search";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
 //                startActivity(myIntent);
             }
         });

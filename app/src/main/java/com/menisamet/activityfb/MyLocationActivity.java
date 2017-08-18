@@ -64,7 +64,6 @@ public class MyLocationActivity extends FragmentActivity implements OnMapReadyCa
         /**
          LatLng telAviv = new LatLng(32.063167, 34.7705518);
          mMap.addMarker(new MarkerOptions().position(telAviv).title("Facebook Tel Aviv"));
-
          CameraPosition target = CameraPosition.builder().target(telAviv).zoom(14).build();
          mMap.moveCamera(CameraUpdateFactory.newCameraPosition(target));
          mMap.moveCamera(CameraUpdateFactory.newLatLng(telAviv));
@@ -74,8 +73,8 @@ public class MyLocationActivity extends FragmentActivity implements OnMapReadyCa
         } else {
             requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, MY_PERMISSIONS_COURSE_LOCATION);
         }
-
     }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
