@@ -43,4 +43,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <Button
+        android:id="@+id/next"
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:onClick="nextToInterested"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"/>
+
 </RelativeLayout>

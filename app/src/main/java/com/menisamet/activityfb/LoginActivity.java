@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,22 +31,26 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
+import com.squareup.picasso.Picasso;
 
 
 public class LoginActivity extends AppCompatActivity implements
         View.OnClickListener {
-    public static final String TAG = "TAG_"+LoginActivity.class.getCanonicalName();
+    public static final String TAG = "TAG_" + LoginActivity.class.getCanonicalName();
 
     private FirebaseAuth.AuthStateListener mAuthListener;
 
-    private TextView mStatusTextView;
-    private TextView mDetailTextView;
+//    private TextView mStatusTextView;
+//    private TextView mDetailTextView;
+    private TextView mTitleTextView;
 
     // [START declare_auth]
     private FirebaseAuth mAuth;
     // [END declare_auth]
 
     private CallbackManager mCallbackManager;
+
+    ImageView mImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +59,12 @@ public class LoginActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_login);
 
         // Views
-        mStatusTextView = (TextView) findViewById(R.id.status);
-        mDetailTextView = (TextView) findViewById(R.id.detail);
+//        mStatusTextView = (TextView) findViewById(R.id.status);
+//        mDetailTextView = (TextView) findViewById(R.id.detail);
+        mTitleTextView = (TextView) findViewById(R.id.title_text);
         findViewById(R.id.button_facebook_signout).setOnClickListener(this);
+
+        mImageView = (ImageView)findViewById(R.id.icon);
 
         // [START initialize_auth]
         // Initialize Firebase Auth
@@ -116,7 +124,7 @@ public class LoginActivity extends AppCompatActivity implements
     // [END on_activity_result]
 
     // [START auth_with_facebook]
-    private void handleFacebookAccessToken(AccessToken token) {
+    private void handleFacebookAccessToken(final AccessToken token) {
         Log.d(TAG, "handleFacebookAccessToken:" + token);
         // [START_EXCLUDE silent]
 //        showProgressDialog();
@@ -132,6 +140,10 @@ public class LoginActivity extends AppCompatActivity implements
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             Database.getInstance().setFirebaseUser(user);
+                            String userID = token.getUserId();
+                            Log.d(TAG, "user id : " + userID);
+                            Log.d(TAG, "https://graph.facebook.com/" + userID + "/picture?type=large");
+                            Picasso.with(getApplicationContext()).load("https://graph.facebook.com/" + userID + "/picture?type=large").into(mImageView);
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
@@ -159,17 +171,25 @@ public class LoginActivity extends AppCompatActivity implements
     private void updateUI(FirebaseUser user) {
 //        hideProgressDialog();
         if (user != null) {
-            mStatusTextView.setText(getString(R.string.facebook_status_fmt, user.getDisplayName()));
-            mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
+//            mStatusTextView.setText(getString(R.string.facebook_status_fmt, user.getDisplayName()));
+//            mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
+            mTitleTextView.setText(user.getDisplayName());
 
             findViewById(R.id.button_facebook_login).setVisibility(View.GONE);
             findViewById(R.id.button_facebook_signout).setVisibility(View.VISIBLE);
+            findViewById(R.id.button_next_page).setVisibility(View.VISIBLE);
+
+
+
+
+
         } else {
-            mStatusTextView.setText(R.string.signed_out);
-            mDetailTextView.setText(null);
+//            mStatusTextView.setText(R.string.signed_out);
+//            mDetailTextView.setText(null);
 
             findViewById(R.id.button_facebook_login).setVisibility(View.VISIBLE);
             findViewById(R.id.button_facebook_signout).setVisibility(View.GONE);
+            findViewById(R.id.button_next_page).setVisibility(View.GONE);
         }
     }
 
@@ -179,5 +199,11 @@ public class LoginActivity extends AppCompatActivity implements
         if (i == R.id.button_facebook_signout) {
             signOut();
         }
+    }
+
+    public void goToMap(View view)
+    {
+        Intent intent = new Intent(this, MyLocationActivity.class);
+        startActivity(intent);
     }
 }

@@ -1,11 +1,14 @@
 package com.menisamet.activityfb;
 
+import android.util.Log;
+
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 import com.menisamet.activityfb.Models.Event;
 import com.menisamet.activityfb.Models.Topic;
@@ -19,6 +22,7 @@ import java.util.List;
  */
 
 class Database {
+    public static final String TAG = "TAG_"+Database.class.getCanonicalName();
     private static final Database ourInstance = new Database();
 
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -33,7 +37,6 @@ class Database {
     }
 
     private Database() {
-
     }
 
     public void loadAllUsers() {
@@ -41,8 +44,26 @@ class Database {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                List<User> users = (List<User>) dataSnapshot.getValue(User.class);
+                List<User> users = new ArrayList<User>();
+                for (DataSnapshot userSnapshot : dataSnapshot.getChildren())
+                {
+                    User user = new User();
+                    String uid = userSnapshot.child("uid").getValue(String.class);
+                    String userName = userSnapshot.child("name").getValue(String.class);
+                    GenericTypeIndicator<List<Topic>> genericTypeIndicatorTopic =new GenericTypeIndicator<List<Topic>>(){};
+                    List<Topic> topicList = userSnapshot.child("topicList").getValue(genericTypeIndicatorTopic);
+                    GenericTypeIndicator<List<Event>> genericTypeIndicatorEvent =new GenericTypeIndicator<List<Event>>(){};
+                    List<Event> eventList = userSnapshot.child("eventList").getValue(genericTypeIndicatorEvent);
+
+                    user.setUid(uid);
+                    user.setName(userName);
+                    user.setTopicList(topicList);
+                    user.setUserEventList(eventList);
+
+                    users.add(user);
+                }
                 allUsers = users;
+                Log.d(TAG, allUsers.toString());
             }
 
             @Override
@@ -84,7 +105,7 @@ class Database {
     }
 
     public void test() {
-
+        loadAllUsers();
         DatabaseReference myRef = database.getReference("message");
         allUsers = new ArrayList<>();
 
@@ -104,6 +125,12 @@ class Database {
         newUser.setName("test2");
         newUser.setTopicList(new ArrayList<Topic>());
         newUser.setUid("22222");
+
+        Event event = new Event(9, "hi hi", 2);
+        newUser.getUserEventList().add(event);
+        Event event2 = new Event(1, "hi bye", 15);
+        newUser.getUserEventList().add(event2);
+
         allUsers.add(newUser);
 
         databaseReference.setValue(allUsers);

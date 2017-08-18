@@ -1,10 +1,12 @@
 package com.menisamet.activityfb;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.igalata.bubblepicker.BubblePickerListener;
 import com.igalata.bubblepicker.adapter.BubblePickerAdapter;
@@ -75,5 +77,11 @@ public class InterestsActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         picker.onPause();
+    }
+
+
+    public void goToExplore(View view) {
+        Intent intent = new Intent(this, MyLocationActivity.class);
+        startActivity(intent);
     }
 }

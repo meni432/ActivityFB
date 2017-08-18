@@ -92,4 +92,6 @@
         <item>Monopole</item>
         <item>Scrabble</item>
     </string-array>
+    <string name="textview">TextView</string>
+    <string name="next">Next</string>
 </resources>
