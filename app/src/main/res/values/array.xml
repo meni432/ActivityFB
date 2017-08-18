@@ -22,15 +22,15 @@
         <item>@drawable/basketball</item>
         <item>@drawable/tennis</item>
         <item>@drawable/portal</item>
-        <item>@drawable/costa_rica</item>
-        <item>@drawable/dominican_republic</item>
-        <item>@drawable/mexico</item>
-        <item>@drawable/nicaragua</item>
-        <item>@drawable/peru</item>
-        <item>@drawable/venezuela</item>
-        <item>@drawable/cuba</item>
-        <item>@drawable/ecuador</item>
-        <item>@drawable/el_salvador</item>
+        <item>@drawable/texas</item>
+        <item>@drawable/ping_pong</item>
+        <item>@drawable/snooker</item>
+        <item>@drawable/hiking</item>
+        <item>@drawable/hackathon</item>
+        <item>@drawable/bridge</item>
+        <item>@drawable/risk</item>
+        <item>@drawable/monopoly</item>
+        <item>@drawable/scrabble</item>
     </integer-array>
 
     <integer-array name="colors">
